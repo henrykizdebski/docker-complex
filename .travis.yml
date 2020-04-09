@@ -3,10 +3,10 @@ services:
  - docker
 
 before_install:
- - docker build - pizdebski/complex-test -f ./client/Dockerfile.dev ./client
+ - docker build -t pizdebski/complex-test -f ./client/Dockerfile.dev ./client
 
 script:
- - docker run pizdebski/complex-test npm test -- -- coverage
+  - docker run -e CI=true USERNAME/react-test npm test
 
 after_success:
  - docker build -t pizdebski/multi-client ./client 
