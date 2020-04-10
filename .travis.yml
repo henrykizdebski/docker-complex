@@ -22,3 +22,17 @@ after_success:
  - docker push pizdebski/multi-nginx
  - docker push pizdebski/multi-server
  - docker push pizdebski/multi-worker
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "multi-docker"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-446518935327"
+  bucket_path: "multi-docker"
+  on:
+   branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+
