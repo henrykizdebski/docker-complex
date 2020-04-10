@@ -4,8 +4,37 @@
   {
    "name": "client",
    "image": "pizdebski/multi-client",
-   "hostname": "client"
+   "hostname": "client",
+   "essential": false
+  },
+  {
+   "name": "server",
+   "image": "pizdebski/multi-server",
+   "hostname": "api",
+   "esseintal": false
+  },
+  {
+   "name": "worker",
+   "image": "pizdebski/multi-worker",
+   "hostname": "worker",
+   "essential": false
+  },
+  {
+  "name": "nginx",
+  "image": "pizdebski/multi-nginx",
+  "hostname": "nginx",
+  "essential": true,
+  "portMappings": [
+   {
+    "hostPort": 80,
+    "containerPort": 80
+   }
+  ],
+
+  "links": ["client", "server"]
   }
+ 
  ]
+
 }
 
