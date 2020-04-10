@@ -16,6 +16,7 @@ after_success:
  - docker build -t pizdebski/multi-workter ./worker
  # docker hub
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+ - docker push pizdebski/multi-worker
  - docker push pizdebski/multi-client
  - docker push pizdebski/multi-nginx
  - docker push pizdebski/multi-server

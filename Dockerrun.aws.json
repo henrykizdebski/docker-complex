@@ -1,0 +1,11 @@
+{
+ "AWSEBDockerrunVersion": 2,
+ "containterDefinitions": [
+  {
+   "name": "client",
+   "image": "pizdebski/multi-client",
+   "hostname": "client"
+  }
+ ]
+}
+
