@@ -12,7 +12,7 @@
    "name": "server",
    "image": "pizdebski/multi-server",
    "hostname": "api",
-   "esseintal": false,
+   "essential": false,
    "memory": 128
   },
   {
