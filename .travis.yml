@@ -9,10 +9,10 @@ script:
   - docker run -e CI=true pizdebski/complex-test npm test
 
 after_success:
- - docker build -t pizdebski/multi-client ./client
- - docker build -t pizdebski/multi-nginx ./nginx
- - docker build -t pizdebski/multi-server ./server
- - docker build -t pizdebski/multi-worker ./worker
+ - docker build -t pizdebski/multi-client:v3 ./client
+ - docker build -t pizdebski/multi-nginx:v3 ./nginx
+ - docker build -t pizdebski/multi-server:v3 ./server
+ - docker build -t pizdebski/multi-worker:v3 ./worker
 
  # docker hub
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
