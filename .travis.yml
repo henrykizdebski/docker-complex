@@ -20,3 +20,4 @@ after_success:
  - docker push pizdebski/multi-client:v3
  - docker push pizdebski/multi-nginx:v3
  - docker push pizdebski/multi-server:v3
+ - docker push pizdebski/multi-jmeter
